@@ -5,25 +5,36 @@ import io.vavr.collection.List;
 
 class Main {
 
-	private static List<Integer> numbers = List.empty();
 
-	public static void main(String[] args) {
-		for (Integer i = 2; i < 100; i++) {
-			if (i == 2) {
-				numbers = numbers.append(i);
-				continue;
-			}
+	public static void main(String[] args) { 
 
-			if (i % 2 == 0) { continue; }
-	
-			if (i % (i - 1) == 0) {
-				numbers = numbers.append(i);
-			}
+		if(args.length != 2) {
+			System.exit(1);
 		}
-		
 
-		System.out.println(numbers);
+		System.out.println(List.range(0, Integer.parseInt(args[0])).filter(Main::isPrime));
+
+		System.out.println(args[1]);
    	}
+
+	private static Boolean isPrime(Integer toBeTested) {
+		
+		if(toBeTested == 0 || toBeTested == 1) {
+			return false;
+		}
+
+		for (Integer dividor = 2; dividor < toBeTested-1 ; dividor++) {
+
+                        if ( toBeTested % dividor == 0) {
+
+                		return false;	                
+
+                        }
+
+                }
+
+		return true;
+	}
 
 }
 
