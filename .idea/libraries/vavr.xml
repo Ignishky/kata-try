@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="vavr">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/vavr.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
